@@ -1,0 +1,45 @@
+/root/.pyenv/versions/3.11.1/lib/python3.11/site-packages/pylama/lint/__init__.py:10: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import iter_entry_points
+============================= test session starts ==============================
+platform linux -- Python 3.11.1, pytest-9.0.2, pluggy-1.6.0 -- /root/.pyenv/versions/3.11.1/bin/python
+cachedir: .pytest_cache
+rootdir: /workspace/backend
+plugins: Faker-40.1.2, pylama-8.4.1, anyio-3.7.1, asyncio-1.4.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 33 items
+
+tests/test_api_integration.py::TestAPI::test_knowledge_points_list PASSED [  3%]
+tests/test_api_integration.py::TestAPI::test_knowledge_points_filter PASSED [  6%]
+tests/test_api_integration.py::TestAPI::test_questions_list PASSED       [  9%]
+tests/test_api_integration.py::TestAPI::test_questions_filter_by_kp PASSED [ 12%]
+tests/test_api_integration.py::TestAPI::test_get_question_by_id PASSED   [ 15%]
+tests/test_api_integration.py::TestAPI::test_get_nonexistent_question PASSED [ 18%]
+tests/test_api_integration.py::TestAPI::test_submit_correct_answer PASSED [ 21%]
+tests/test_api_integration.py::TestAPI::test_submit_wrong_answer PASSED  [ 24%]
+tests/test_api_integration.py::TestAPI::test_submit_nonexistent_question PASSED [ 27%]
+tests/test_api_integration.py::TestAPI::test_dashboard PASSED            [ 30%]
+tests/test_api_integration.py::TestAPI::test_review_due PASSED           [ 33%]
+tests/test_api_integration.py::TestAPI::test_error_book PASSED           [ 36%]
+tests/test_api_integration.py::TestAPI::test_weak_points PASSED          [ 39%]
+tests/test_api_integration.py::TestAPI::test_correct_rate_trend PASSED   [ 42%]
+tests/test_sm2.py::TestCalculateQuality::test_correct_fast_returns_5 PASSED [ 45%]
+tests/test_sm2.py::TestCalculateQuality::test_correct_normal_returns_4 PASSED [ 48%]
+tests/test_sm2.py::TestCalculateQuality::test_correct_slow_returns_3 PASSED [ 51%]
+tests/test_sm2.py::TestCalculateQuality::test_wrong_fast_returns_2 PASSED [ 54%]
+tests/test_sm2.py::TestCalculateQuality::test_wrong_normal_returns_1 PASSED [ 57%]
+tests/test_sm2.py::TestCalculateQuality::test_wrong_slow_returns_0 PASSED [ 60%]
+tests/test_sm2.py::TestCalculateQuality::test_boundary_time_spent_equal_avg PASSED [ 63%]
+tests/test_sm2.py::TestCalculateQuality::test_boundary_time_spent_equal_avg_half PASSED [ 66%]
+tests/test_sm2.py::TestSm2Update::test_quality_0_resets_interval PASSED  [ 69%]
+tests/test_sm2.py::TestSm2Update::test_quality_1_resets_interval PASSED  [ 72%]
+tests/test_sm2.py::TestSm2Update::test_quality_2_resets_interval PASSED  [ 75%]
+tests/test_sm2.py::TestSm2Update::test_quality_3_first_time_interval_1 PASSED [ 78%]
+tests/test_sm2.py::TestSm2Update::test_quality_4_second_time_interval_6 PASSED [ 81%]
+tests/test_sm2.py::TestSm2Update::test_quality_5_third_time_interval_ef_product PASSED [ 84%]
+tests/test_sm2.py::TestSm2Update::test_easiness_factor_never_below_1_3 PASSED [ 87%]
+tests/test_sm2.py::TestSm2Update::test_easiness_factor_increases_with_good_quality PASSED [ 90%]
+tests/test_sm2.py::TestSm2Update::test_easiness_factor_decreases_with_bad_quality PASSED [ 93%]
+tests/test_sm2.py::TestSm2Update::test_default_parameters PASSED         [ 96%]
+tests/test_sm2.py::TestSm2Update::test_next_review_date_in_future PASSED [100%]
+
+============================== 33 passed in 3.59s ==============================

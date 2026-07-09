@@ -1,0 +1,18 @@
+{
+  "name": "math-practice-system",
+  "leadAgentId": "7c94b2fbfcdd4891adaf96e50e2f1212",
+  "workspacePath": "/workspace",
+  "createdAt": "2026-06-25T07:31:19.899Z",
+  "options": {
+    "workspacePath": "/workspace",
+    "isAutoTeam": false
+  },
+  "members": [
+    {
+      "memberId": "team-lead@math-practice-system",
+      "name": "team-lead",
+      "role": "Team Lead - coordinates the team and interacts with the user"
+    }
+  ],
+  "isAutoTeam": false
+}

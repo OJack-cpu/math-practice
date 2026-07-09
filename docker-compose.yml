@@ -1,0 +1,40 @@
+services:
+  # ── PostgreSQL 数据库 ──
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: mathapp
+      POSTGRES_PASSWORD: mathapp_pass
+      POSTGRES_DB: math_practice
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mathapp -d math_practice"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # ── FastAPI 后端 ──
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql://mathapp:mathapp_pass@db:5432/math_practice
+      ALLOWED_ORIGINS: http://localhost,http://localhost:80
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # ── React 前端 (Nginx) ──
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:
